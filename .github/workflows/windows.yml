@@ -3,7 +3,7 @@ name: Windows
 on:
   push:
     branches:
-      - version_0_2_0
+      - version_0_4_0_GHA
   pull_request:
 
 env:
@@ -24,7 +24,7 @@ jobs:
           - msystem: MINGW64
             prefix: mingw-w64-x86_64
     steps:
-      - name: Prepare MSYS2 environment
+      - name: Prepare MSYS2 environment & rust nightly
         uses: msys2/setup-msys2@v2
         with:
           release: false
@@ -32,16 +32,15 @@ jobs:
           msystem: ${{ matrix.environment.msystem }}
           pacboy: >-
             rust:p
-
+      - shell: msys2 {0}
+        run: |
+          rustup toolchain install nightly
+          rustup default nightly
+          
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Install nightly Rust
-        run: |
-          rustup toolchain install nightly
-          rustup default nightly
 
       - name: Cargo build
         run: cargo build --profile release-lto --features use_winit,use_wgpu,devtools,sound,opl
