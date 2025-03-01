@@ -37,7 +37,9 @@ jobs:
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o rustup-init.sh
           sh rustup-init.sh -y --default-host x86_64-pc-windows-gnu --default-toolchain nightly
-          source $USERPROFILE/.cargo/env
+          echo $PWD
+          ls
+          source ~/.bashrc
           cargo version
 
       - name: Checkout repository
