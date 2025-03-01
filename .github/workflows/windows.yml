@@ -37,10 +37,9 @@ jobs:
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o rustup-init.sh
           sh rustup-init.sh -y --default-host x86_64-pc-windows-gnu --default-toolchain nightly
-          echo $PWD
-          ls .cargo
-          source ~/.bash_profile
-          .cargo/bin/cargo version
+          echo $USERPROFILE
+          ls $USERPROFILE/.cargo
+          $USERPROFILE/.cargo/bin/cargo version
 
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -49,7 +48,7 @@ jobs:
 
       - name: Cargo build
         run: |
-          cargo build --profile release-lto --features use_winit,use_wgpu,devtools,sound,opl
+          $USERPROFILE/.cargo/bin/cargo build --profile release-lto --features use_winit,use_wgpu,devtools,sound,opl
 
       - name: Copy files into install dir
         run: cp LICENSE README.md CHANGELOG.md CREDITS.md target/release-lto/martypc install
