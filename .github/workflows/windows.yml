@@ -38,9 +38,9 @@ jobs:
           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o rustup-init.sh
           sh rustup-init.sh -y --default-host x86_64-pc-windows-gnu --default-toolchain nightly
           echo $PWD
-          ls
-          source ~/.bashrc
-          cargo version
+          ls .cargo
+          source ~/.bash_profile
+          .cargo/bin/cargo version
 
       - name: Checkout repository
         uses: actions/checkout@v4
