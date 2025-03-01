@@ -43,7 +43,6 @@
     A DisplayBackend should be able to be instantiated multiple times, to
     support multiple windows/displays.
 */
-#![feature(trait_alias)]
 #[cfg(not(any(feature = "use_wgpu", feature = "use_glow")))]
 compile_error!("Either the 'use_wgpu' or 'use_glow' feature must be enabled.");
 
