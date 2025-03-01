@@ -101,6 +101,7 @@ marty_config = { path = "../../lib/frontend/marty_config", default-features = fa
 # ---------------------------------------------------------------------------------------------------------------------
 [build-dependencies]
 winres = "0.1"
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }
 
 [features]
 default = ["all_video_cards", "sound", "use_winit", "markdown"]
