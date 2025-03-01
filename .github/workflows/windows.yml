@@ -42,7 +42,7 @@ jobs:
         run: cargo build --profile release-lto --features use_winit,use_wgpu,devtools,sound,opl
 
       - name: Copy files into install dir
-        run: cp README.md CHANGELOG.md CREDITS.md target/release/martypc install
+        run: cp README.md CHANGELOG.md CREDITS.md target/release-lto/martypc install
 
       - name: Rename install directory
         run: mv install martypc
