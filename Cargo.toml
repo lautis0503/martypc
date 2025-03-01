@@ -18,12 +18,14 @@ members = [
 resolver = "2"
 default-members = ["crates/frontends/martypc_eframe"]
 
-[workspace.package]
-version = "0.4.0"
-edition = "2021"
-rust-version = "1.76"
-license = "MIT"
+[package]
+name = "martypc"
+description = "An IBM PC/XT emulator written in Rust."
 authors = ["Daniel Balsom"]
+license = "MIT"
+version = "0.4.0"
+rust-version = "1.76"
+edition = "2021"
 
 [workspace.dependencies]
 winit = "0.30"
@@ -161,7 +163,7 @@ branch = "buffer_size"
 #branch = "0_24_2_winit_0_29_15"
 
 [build-dependencies]
-thunk-rs = "0.3.2"
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }
 
 [profile.release]
 opt-level = 3
