@@ -37,8 +37,10 @@ jobs:
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o rustup-init.sh
           sh rustup-init.sh -y --default-host x86_64-pc-windows-gnu --default-toolchain nightly
-          export PATH="$USERPROFILE\.cargo\bin:$PATH"
-          cargo version
+
+      - name: Add cargo to PATH
+        run: echo "export PATH=\$PATH:$USERPROFILE\.cargo\bin" >> $GITHUB_ENV
+        cargo version
           
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -47,8 +49,6 @@ jobs:
 
       - name: Cargo build
         run: |
-          export PATH="$USERPROFILE\.cargo\bin:$PATH"
-          cargo version
           cargo build --profile release-lto --features use_winit,use_wgpu,devtools,sound,opl
 
       - name: Copy files into install dir
