@@ -31,11 +31,11 @@ jobs:
           update: true
           msystem: ${{ matrix.environment.msystem }}
           pacboy: >-
-            rust:p
+            toolchain:p
       - shell: msys2 {0}
         run: |
-          rustup toolchain install nightly
-          rustup default nightly
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o rustup-init.sh
+          sh rustup-init.sh -y --default-host x86_64-pc-windows-gnu --default-toolchain nightly
           
       - name: Checkout repository
         uses: actions/checkout@v4
