@@ -2,6 +2,8 @@ name: Windows
 
 on:
   push:
+      branches:
+      version_0_4_0_CI
   pull_request:
 
 env:
