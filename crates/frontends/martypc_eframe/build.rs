@@ -32,6 +32,7 @@ use std::{env, io};
 use winres::WindowsResource;
 
 fn main() -> io::Result<()> {
+    thunk::thunk();
     if env::var_os("CARGO_CFG_WINDOWS").is_some() {
         // Create an icon resource for the Windows build.
         // This icon is only used when viewing the executable itself in explorer.
