@@ -18,7 +18,7 @@ members = [
 resolver = "2"
 default-members = ["crates/frontends/martypc_eframe"]
 
-[package]
+[workspace.package]
 name = "martypc"
 description = "An IBM PC/XT emulator written in Rust."
 authors = ["Daniel Balsom"]
@@ -161,9 +161,6 @@ branch = "buffer_size"
 #[workspace.dependencies.egui_plot]
 #git = "https://github.com/dbalsom/egui_martypc.git"
 #branch = "0_24_2_winit_0_29_15"
-
-[build-dependencies]
-thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }
 
 [profile.release]
 opt-level = 3
