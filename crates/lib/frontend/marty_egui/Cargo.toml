@@ -50,6 +50,9 @@ egui-notify = "0.18"
 wgpu = {  workspace = true, optional = true }
 serialport = { workspace = true, optional = true }
 
+[build-dependencies]
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }
+
 [features]
 use_serialport = ["serialport"]
 markdown = ["dep:egui_commonmark"]

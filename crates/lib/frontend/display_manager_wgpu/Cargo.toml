@@ -23,3 +23,6 @@ marty_egui = { path = "../marty_egui" }
 anyhow.workspace = true
 image.workspace = true
 log.workspace = true
+
+[build-dependencies]
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }

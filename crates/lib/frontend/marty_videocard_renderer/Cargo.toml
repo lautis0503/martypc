@@ -28,6 +28,9 @@ web-time.workspace = true
 criterion = "0.5"
 bytemuck = { workspace = true, features = ["derive"] }
 
+[build-dependencies]
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }
+
 [features]
 default = ["ega", "vga"]
 ega = []

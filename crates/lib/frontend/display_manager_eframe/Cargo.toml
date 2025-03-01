@@ -34,6 +34,9 @@ display_backend_eframe = { path = "../../backend/display_backend_eframe", option
 display_backend_eframe_wgpu = { path = "../../backend/display_backend_eframe_wgpu", optional = true }
 marty_scaler_wgpu = { path = "../marty_scaler_wgpu", optional = true }
 
+[build-dependencies]
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }
+
 [features]
 default = []
 use_wgpu = ["dep:egui-wgpu", "marty_scaler_wgpu", "dep:display_backend_eframe_wgpu"]

@@ -26,3 +26,6 @@ web-sys = { workspace = true , features = [
 crossbeam-channel.workspace = true
 url.workspace = true
 gloo-timers = { version = "0.3", features = ["futures"] }
+
+[build-dependencies]
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }

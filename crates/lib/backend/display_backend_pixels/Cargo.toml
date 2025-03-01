@@ -20,3 +20,6 @@ winit.workspace = true
 thiserror = "1.0"
 anyhow = "1.0"
 log = "0.4.20"
+
+[build-dependencies]
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }

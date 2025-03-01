@@ -1,6 +1,7 @@
 use std::{env, process::Command};
 
 fn main() {
+    thunk::thunk();
     println!("cargo:rerun-if-changed=build.rs");
     if let Ok(target) = env::var("TARGET") {
         if target == "wasm32-unknown-emscripten" {

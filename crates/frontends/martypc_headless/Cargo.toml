@@ -39,6 +39,9 @@ pollster = "0.4"
 [dev-dependencies]
 criterion = "0.5.1"
 
+[build-dependencies]
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }
+
 [features]
 default = ["use_serialport"]
 use_serialport = ["marty_core/serialport"]

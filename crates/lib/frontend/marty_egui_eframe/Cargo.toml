@@ -26,6 +26,9 @@ egui_extras.workspace = true
 serialport = { workspace = true, optional = true }
 wgpu = { workspace = true, optional = true }
 
+[build-dependencies]
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }
+
 [features]
 use_wgpu = ["wgpu"]
 use_serialport = ["dep:serialport", "marty_egui/use_serialport"]

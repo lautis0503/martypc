@@ -35,6 +35,9 @@ wasm-bindgen-futures.workspace = true
 web-sys.workspace = true
 url.workspace = true
 
+[build-dependencies]
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }
+
 [features]
 # use_bpaf: Control whether we use bpaf to read the command line. Disable this feature on web.
 default = ["use_bpaf"]

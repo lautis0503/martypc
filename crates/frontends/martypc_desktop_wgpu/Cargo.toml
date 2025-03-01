@@ -84,6 +84,7 @@ opl = ["marty_core/opl"]
 
 [build-dependencies]
 winres = "0.1"
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }
 
 [package.metadata.appimage]
 assets = [

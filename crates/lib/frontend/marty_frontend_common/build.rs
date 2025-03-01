@@ -25,22 +25,7 @@
     --------------------------------------------------------------------------
 */
 
-//! Build procedure for MartyPC.
-//! This build script is used to compile the Windows icon resource for the executable.
-
-use std::{env, io};
-use winres::WindowsResource;
-
 fn main() -> io::Result<()> {
     thunk::thunk();
-    if env::var_os("CARGO_CFG_WINDOWS").is_some() {
-        // Create an icon resource for the Windows build.
-        // This icon is only used when viewing the executable itself in explorer.
-        // We have to set the icon again in Winit for each window we create.
-        WindowsResource::new()
-            // This path can be absolute, or relative to your crate root.
-            .set_icon("../../../assets/martypc.ico")
-            .compile()?;
-    }
     Ok(())
 }

@@ -56,6 +56,9 @@ fluxfox = { workspace = true, default-features=false, features = ["core", "wasm"
 [dev-dependencies]
 criterion = "0.5"
 
+[build-dependencies]
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }
+
 [[bench]]
 name = "cga_bench"
 harness = false

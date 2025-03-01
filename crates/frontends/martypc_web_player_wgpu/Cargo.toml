@@ -47,5 +47,8 @@ web-sys = { version = "0.3", features = ["GpuTextureFormat", "Request", "Request
 instant = "0.1.12"
 cpal = { version = "0.13.5", features = ["wasm-bindgen"]}
 
+[build-dependencies]
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }
+
 [features]
 devtools=[]

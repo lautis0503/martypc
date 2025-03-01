@@ -49,6 +49,9 @@ branch = "master"
 default-features = false
 features = ["chrono", "std", "alloc"]
 
+[build-dependencies]
+thunk-rs = { version = "0.3.2", default-features = false, features = ["win7"] }
+
 [features]
 default = ["use_url", "use_egui", "use_display"]
 ega = []
