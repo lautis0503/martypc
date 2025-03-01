@@ -24,7 +24,7 @@ jobs:
           - msystem: MINGW64
             prefix: mingw-w64-x86_64
     steps:
-      - name: Prepare MSYS2 environment & rust nightly
+      - name: Prepare MSYS2 environment
         uses: msys2/setup-msys2@v2
         with:
           release: false
@@ -32,10 +32,12 @@ jobs:
           msystem: ${{ matrix.environment.msystem }}
           pacboy: >-
             toolchain:p
-      - shell: msys2 {0}
+
+      - name: Install nightly Rust
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o rustup-init.sh
           sh rustup-init.sh -y --default-host x86_64-pc-windows-gnu --default-toolchain nightly
+          source shell mingw64
           
       - name: Checkout repository
         uses: actions/checkout@v4
